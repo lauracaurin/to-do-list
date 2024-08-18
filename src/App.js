@@ -3,7 +3,7 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
-import React, { useState } from 'react';
+import React from 'react';
 
 // Ej img: import logoMenu from '../images/ico-menu.svg';
 
@@ -22,6 +22,15 @@ function App() {
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
+  const searchedTodos = todos.filter(
+    (todo) => {
+      const todoText = todo.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+      return todoText.includes(searchText);
+    }
+  );
+
+
   console.log("los usuarios buscan todos de " + searchValue);
 
   return (
@@ -34,7 +43,7 @@ function App() {
         setSearchValue={setSearchValue} />
 
       <TodoList>
-        {defaultTodos.map(todo => (
+        {searchedTodos.map(todo => (
           <TodoItem
             key={todo.text}
             text={todo.text}
