@@ -2,7 +2,6 @@ import { CompleteIcon } from "./CompleteIcon"
 import { DeleteIcon } from "./DeleteIcon"
 import './TodoItem.css';
 
-
 function TodoItem({ text, completed, onComplete, onDelete }) {
 
   return (
