@@ -14,10 +14,8 @@ function TodoProvider({ children }) {
 
   const [searchValue, setSearchValue] = React.useState("");
   const [openModal, setOpenModal] = React.useState(false);
-
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
-
   const searchedTodos = todos.filter(
     (todo) => {
       const todoText = todo.text.toLowerCase();

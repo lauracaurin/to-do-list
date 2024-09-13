@@ -24,19 +24,17 @@ function TodoForm() {
 
   const onChange = (event) => {
     SetNewTodoValue(event.target.value);
-
   }
 
   return (
     <form onSubmit={onSubmit}>
       <label>Escribe tu nuevo TODO</label>
       <textarea
-        placeholder="Cortar cebolla"
+        placeholder="Enviar correos pendientes"
         value={newTodoValue}
         onChange={onChange}
       ></textarea>
-
-      <div className="TodoForm-button--container">
+      <div className="TodoForm-buttonContainer">
         <button
           type="button"
           className="TodoForm-button TodoForm-button--cancel"

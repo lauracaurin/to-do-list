@@ -22,12 +22,11 @@ function AppUI() {
     openModal,
     setOpenModal,
   } = React.useContext(TodoContext);
+
   return (
     <>
       <TodoCounter />
       <TodoSearch />
-
-
       <TodoList>
         {loading && (
           <>
@@ -49,11 +48,7 @@ function AppUI() {
           />
         ))}
       </TodoList >
-
-
-      <CreateTodoButton
-        setOpenModal={setOpenModal} />
-
+      <CreateTodoButton setOpenModal={setOpenModal} />
       {openModal && (
         <Modal>
           <TodoForm></TodoForm>
